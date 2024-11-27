@@ -1,0 +1,15 @@
+torch
+pandas
+transformers
+tqdm
+huggingface_hub
+langchain
+numpy
+scikit-learn
+datasets
+sentencepiece
+accelerate
+tensorboard
+jupyter
+matplotlib
+seaborn

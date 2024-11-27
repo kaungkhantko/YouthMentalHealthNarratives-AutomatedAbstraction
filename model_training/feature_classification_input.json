@@ -1,0 +1,644 @@
+{
+  "sections": [
+    {
+      "name": "Mental health history and current state",
+      "variables": [
+        {
+          "id": "DepressedMood",
+          "type": "binary",
+          "definition": "Victim was perceived by self or others to be depressed at the time of the injury.",
+          "question": "Was the victim perceived by self or others to be depressed at the time of the injury?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim had a depressed mood at the time of injury",
+            "Depressed mood does not require a clinical diagnosis",
+            "Depression does not need to have contributed directly to the death"
+          ],
+          "examples": [
+            "Victim described as sad, despondent, down, blue, low, or unhappy",
+            "Victim was noted as feeling 'blue' or 'low'"
+          ],
+          "exclusions": [
+            "Words indicating agitation, anger, madness, anxiety, or being overwrought should not trigger coding",
+            "Do not select if victim had no depressive symptoms at the time despite a history of depression"
+          ],
+          "notes": [
+            "Depressed mood should be explicitly noted in the record",
+            "Do not infer depression based on unrelated circumstances like financial issues"
+          ]
+        },
+        {
+          "id": "MentalIllnessTreatmentCurrnt",
+          "type": "binary",
+          "definition": "Currently in treatment for a mental health or substance abuse problem.",
+          "question": "Was the victim currently in treatment for a mental health or substance abuse problem?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim was actively undergoing treatment at the time of injury",
+            "Treatment includes psychiatric medication, therapy, or self-help program participation"
+          ],
+          "examples": [
+            "Victim had a current prescription for psychiatric medication",
+            "Attending therapy sessions or substance abuse programs"
+          ],
+          "exclusions": [
+            "Positive toxicology for psychiatric medications alone without evidence of treatment",
+            "Past treatment that is noted as resolved and inactive"
+          ],
+          "notes": [
+            "If coded '1' for current treatment, also code '1' for history of mental illness treatment",
+            "Treatment evidence may come from prescriptions, family reports, or other verification"
+          ]
+        },
+        {
+          "id": "HistoryMentalIllnessTreatmnt",
+          "type": "binary",
+          "definition": "History of ever being treated for a mental health or substance abuse problem.",
+          "question": "Did the victim have a history of being treated for a mental health or substance abuse problem?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim was noted as ever having received treatment for a mental health or substance abuse problem, either at the time of death or in the past",
+            "Includes having a current prescription, seeing a mental health professional within the past two months, or participating in a self-help program such as Alcoholics Anonymous",
+            "Do not code solely based on a positive toxicology test for psychiatric medications without evidence of treatment, such as a current prescription or confirmation from family members"
+          ],
+          "examples": [
+            "Victim was on antidepressants or other psychiatric medications",
+            "Participated in Alcoholics Anonymous meetings regularly"
+          ],
+          "exclusions": [
+            "Toxicology results showing psychiatric medication without evidence of ongoing treatment",
+            "Victim had no depressive symptoms at the time despite a history of depression"
+          ],
+          "notes": [
+            "A victim in current treatment automatically has a history of treatment",
+            "Ensure evidence of treatment comes from reliable sources like prescriptions, medical records, or family reports"
+          ]
+        },
+        {
+          "id": "SuicideAttemptHistory",
+          "type": "binary",
+          "definition": "Victim has a history of attempting suicide before the fatal incident.",
+          "question": "Did the victim have a history of attempting suicide before the fatal incident?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Code as 'Yes' if the victim was known to have made previous suicide attempts before the fatal incident",
+            "Includes both direct attempts and indirect expressions of intent, regardless of severity or outcome"
+          ],
+          "examples": [
+            "Victim previously attempted suicide by overdose",
+            "Victim expressed suicidal thoughts to a friend prior to the fatal incident"
+          ],
+          "exclusions": [
+            "Victim had suicidal thoughts but no documented attempts",
+            "Expressions of distress without any intent to die"
+          ],
+          "notes": [
+            "Ensure that any past attempts are documented in records or confirmed by reliable sources",
+            "Do not infer attempts solely based on general statements of frustration or sadness"
+          ]
+        },
+        {
+          "id": "SuicideThoughtHistory",
+          "type": "binary",
+          "definition": "Victim had a history of suicidal thoughts or plans. Disclosure can be verbal, written or electronic.",
+          "question": "Did the victim have a history of suicidal thoughts or plans?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Code as 'Yes' if the victim expressed suicidal thoughts or plans at any time in their life",
+            "Includes both direct and indirect expressions, regardless of timing or frequency"
+          ],
+          "examples": [
+            "Victim stated, 'I'm thinking of ending my life,' to a family member",
+            "Sent a text message indicating plans to commit suicide"
+          ],
+          "exclusions": [
+            "Victim had general feelings of sadness without any mention of suicide",
+            "Expressions of distress not linked to suicidal intent"
+          ],
+          "notes": [
+            "Documentation should come from reliable sources such as medical records or verified family reports",
+            "Exclude general negativity or temporary distress unless explicitly linked to suicidal thoughts or plans"
+          ]
+        },
+        {
+          "id": "SubstanceAbuseProblem",
+          "type": "binary",
+          "definition": "Victim had alcohol dependence or alcohol problem or other illicit or prescription drug abuse problem.",
+          "question": "Did the victim have an alcohol or substance abuse problem?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Code 'Yes' if the victim was perceived to have an alcohol-related issue or addiction",
+            "Includes abuse of illicit drugs or prescription medications, regardless of direct contribution to death",
+            "Participation in rehabilitation programs qualifies for a 'Yes' code"
+          ],
+          "examples": [
+            "Victim was enrolled in a substance abuse rehabilitation program",
+            "Had a prescription for opioids used for non-medical purposes"
+          ],
+          "exclusions": [
+            "Victim used alcohol or drugs shortly before the incident without evidence of dependence",
+            "Past alcohol or substance issues that have been resolved and are inactive"
+          ],
+          "notes": [
+            "Evidence of substance abuse can include prescriptions, treatment program participation, or reliable family reports",
+            "Do not code solely based on toxicology results without corroborating evidence of abuse or dependence"
+          ]
+        },
+        {
+          "id": "MentalHealthProblem",
+          "type": "binary",
+          "definition": "Current mental health problem.",
+          "question": "Does the victim have a current mental health problem?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Code 'Yes' if the victim is identified as currently having a mental health issue",
+            "Includes disorders listed in DSM-5, excluding substance dependencies"
+          ],
+          "examples": [
+            "Victim diagnosed with major depressive disorder and currently under treatment",
+            "Victim experiencing symptoms of schizophrenia at the time of death"
+          ],
+          "exclusions": [
+            "Victim had mental health issues in the past but none currently",
+            "Substance dependencies are coded separately and should not be conflated with mental health problems"
+          ],
+          "notes": [
+            "Ensure that the current mental health problem is documented by a qualified professional",
+            "Exclude inferred or assumed mental health issues without proper documentation"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Specific mental health diagnoses",
+      "variables": [
+        {
+          "id": "DiagnosisAnxiety",
+          "type": "binary",
+          "definition": "The victim is diagnosed with anxiety disorder.",
+          "question": "Was the victim diagnosed with an anxiety disorder?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim was diagnosed with anxiety disorder at the time of death",
+            "Past treatment for anxiety may justify a 'Yes' unless resolved"
+          ],
+          "examples": [
+            "Victim attended therapy for generalized anxiety disorder",
+            "Victim had a current prescription for anti-anxiety medication"
+          ],
+          "exclusions": [
+            "Toxicology results showing psychiatric medication without treatment evidence",
+            "No explicit diagnosis or mention of anxiety"
+          ],
+          "notes": [
+            "The diagnosis of anxiety disorder should be explicitly mentioned or confirmed by a family member or records",
+            "Do not infer diagnosis from general anxiety or worry without clinical evidence"
+          ]
+        },
+        {
+          "id": "DiagnosisDepressionDysthymia",
+          "type": "binary",
+          "definition": "The victim is diagnosed with depression or dysthymia.",
+          "question": "Was the victim diagnosed with depression or dysthymia?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim had a clinical diagnosis of depression or dysthymia",
+            "Past treatment justifies a 'Yes' unless it was explicitly resolved"
+          ],
+          "examples": [
+            "Victim previously diagnosed with major depressive disorder",
+            "Documented therapy sessions addressing dysthymic disorder"
+          ],
+          "exclusions": [
+            "No clear diagnosis or only temporary sadness",
+            "Medication in toxicology report without evidence of ongoing treatment"
+          ],
+          "notes": [
+            "Depression or dysthymia should be documented by a medical professional or confirmed by a reliable source",
+            "Exclude feelings of sadness or 'feeling down' without clinical diagnosis"
+          ]
+        },
+        {
+          "id": "DiagnosisBipolar",
+          "type": "binary",
+          "definition": "The victim is diagnosed with bipolar disorder.",
+          "question": "Was the victim diagnosed with bipolar disorder?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim diagnosed with bipolar disorder by a qualified professional",
+            "Any mention of bipolar disorder diagnosis in records or by family"
+          ],
+          "examples": [
+            "Diagnosed with bipolar I disorder and prescribed mood stabilizers",
+            "Medical record noting manic and depressive episodes"
+          ],
+          "exclusions": [
+            "Mood swings or manic episodes without a confirmed diagnosis",
+            "Symptoms of depression alone, without manic episodes"
+          ],
+          "notes": [
+            "Ensure the diagnosis covers both manic and depressive episodes, indicative of bipolar disorder",
+            "Avoid inferring bipolar disorder based on mood instability alone"
+          ]
+        },
+        {
+          "id": "DiagnosisAdhd",
+          "type": "binary",
+          "definition": "The victim is diagnosed with attention deficit hyperactivity disorder.",
+          "question": "Was the victim diagnosed with attention deficit hyperactivity disorder?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Clinical diagnosis of ADHD or ADD by a qualified professional",
+            "Documentation of ADHD symptoms and treatment in records"
+          ],
+          "examples": [
+            "Patient prescribed stimulant medication for ADHD",
+            "Diagnosis of ADHD confirmed by a therapist or psychiatrist"
+          ],
+          "exclusions": [
+            "Symptoms of inattention without a clear diagnosis",
+            "Hyperactivity or impulsivity without a clinical ADHD diagnosis"
+          ],
+          "notes": [
+            "Diagnosis should be confirmed by official records or reliable family report",
+            "Exclude cases of self-reported ADHD symptoms without a clinical diagnosis"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contributing factors",
+      "variables": [
+        {
+          "id": "IntimatePartnerProblem",
+          "type": "binary",
+          "definition": "Problems with a current or former intimate partner appear to have contributed to the suicide or undetermined death.",
+          "question": "Did problems with a current or former intimate partner appear to contribute to the suicide or undetermined death?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim experienced relationship difficulties with a current or former intimate partner",
+            "Problems are indicated as contributing factors in the death"
+          ],
+          "examples": [
+            "Recent breakup or divorce mentioned as a stress factor",
+            "Conflict, jealousy, or emotional arguments with an intimate partner"
+          ],
+          "exclusions": [
+            "Transactional relationships (e.g., intimacy exchanged for goods or money)",
+            "Non-intimate partner conflicts (e.g., coworkers or acquaintances)"
+          ],
+          "notes": [
+            "An intimate partner is defined as a spouse, ongoing sexual partner, boyfriend/girlfriend, or significant other",
+            "Same-sex partners are included; unrequited feelings or crushes are excluded"
+          ]
+        },
+        {
+          "id": "FamilyRelationship",
+          "type": "binary",
+          "definition": "Victim had relationship problems with a family member (other than an intimate partner) that appear to have contributed to the death.",
+          "question": "Did relationship problems with a family member (other than an intimate partner) appear to contribute to the death?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Documented issues with a family member contributed to the death",
+            "The family member is not an intimate partner"
+          ],
+          "examples": [
+            "Arguments with parents or siblings",
+            "Conflict with in-laws or extended family members"
+          ],
+          "exclusions": [
+            "General family stress not tied to specific individuals",
+            "Family caregiving burdens without conflict"
+          ],
+          "notes": [
+            "Only include specific relationship problems, not broader family dynamics",
+            "Exclude cases where family strain is due to general caregiving without relational conflict"
+          ]
+        },
+        {
+          "id": "Argument",
+          "type": "binary",
+          "definition": "An argument or conflict led to the victim’s death.",
+          "question": "Did an argument or conflict lead to the victim’s death?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Argument or conflict immediately preceded or directly led to the death",
+            "The argument is documented as a related event to the death"
+          ],
+          "examples": [
+            "Dispute over financial issues that escalated",
+            "Argument about personal matters that ended in violence"
+          ],
+          "exclusions": [
+            "Disagreements not connected to the fatal incident",
+            "Arguments about minor issues without relevance to the death"
+          ],
+          "notes": [
+            "Argument must have a clear connection to the cause of death",
+            "Avoid coding minor or unrelated disagreements as contributing factors"
+          ]
+        },
+        {
+          "id": "SchoolProblem",
+          "type": "binary",
+          "definition": "Problems at or related to school appear to have contributed to the death.",
+          "question": "Did problems at or related to school appear to contribute to the death?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim had school-related issues (e.g., bullying, academic struggles)",
+            "These issues contributed to the victim’s death"
+          ],
+          "examples": [
+            "Poor grades, academic probation, or disciplinary issues",
+            "Incidents of bullying or exclusion by peers"
+          ],
+          "exclusions": [
+            "Minor school stressors that are not directly linked to the death",
+            "General dislike of school without specific problems"
+          ],
+          "notes": [
+            "Code only specific school issues that significantly impacted the victim",
+            "Avoid general statements about dislike of school if unrelated to the incident"
+          ]
+        },
+        {
+          "id": "RecentCriminalLegalProblem",
+          "type": "binary",
+          "definition": "Criminal legal problem(s) appear to have contributed to the death.",
+          "question": "Did criminal legal problem(s) appear to contribute to the death?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim had pending or recent criminal issues that impacted them",
+            "Legal problems are noted as factors in the death"
+          ],
+          "examples": [
+            "Upcoming court date or legal charges causing stress",
+            "Recent interactions with law enforcement tied to criminal activities"
+          ],
+          "exclusions": [
+            "Traffic violations or minor legal infractions",
+            "Criminal history not actively affecting the victim at the time of death"
+          ],
+          "notes": [
+            "Focus on significant legal issues rather than minor or resolved legal problems",
+            "Consider legal stressors that directly influenced the victim's state of mind"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Disclosure of intent",
+      "variables": [
+        {
+          "id": "SuicideNote",
+          "type": "binary",
+          "definition": "Victim left a suicide note (or other recorded communication).",
+          "question": "Did the victim leave a suicide note or other recorded communication?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Presence of a written, recorded, or otherwise documented communication indicating suicide intent",
+            "The note can be written or electronic (e.g., email, text, voicemail)"
+          ],
+          "examples": [
+            "Victim left a handwritten note expressing a desire to end their life",
+            "Recorded a voice message or sent a farewell text indicating suicide plans"
+          ],
+          "exclusions": [
+            "Financial or legal documents found near the victim without an intent statement",
+            "General notes or messages unrelated to suicide intent"
+          ],
+          "notes": [
+            "Suicide note does not have to explicitly mention death but must imply intent",
+            "Messages intended to warn others (e.g., hazardous conditions) may be included if they imply intent"
+          ]
+        },
+        {
+          "id": "SuicideIntentDisclosed",
+          "type": "binary",
+          "definition": "Victim disclosed to another person their thoughts and/or plans to die by suicide within the last month.",
+          "question": "Did the victim disclose to another person their thoughts and/or plans to die by suicide within the last month?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim communicated suicidal thoughts or plans to another person within the past month",
+            "Disclosure was direct or implied in a conversation, written note, or digital message"
+          ],
+          "examples": [
+            "Victim told a friend or family member they were considering suicide",
+            "Sent a message or made a comment indicating plans to commit suicide soon"
+          ],
+          "exclusions": [
+            "General statements of frustration or sadness without mention of suicide",
+            "Disclosures of suicidal thoughts made more than one month before the death"
+          ],
+          "notes": [
+            "Document any details about the disclosure, including timing, recipient, and content",
+            "Focus on disclosures directly linked to suicidal thoughts or plans, not general negativity"
+          ]
+        },
+        {
+          "id": "DisclosedToIntimatePartner",
+          "type": "binary",
+          "definition": "Intent was disclosed to a previous or current intimate partner.",
+          "question": "Was intent disclosed to a previous or current intimate partner?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim disclosed suicide intent specifically to a current or former intimate partner",
+            "Disclosure must have occurred within a relevant timeframe to the incident"
+          ],
+          "examples": [
+            "Victim informed their spouse or partner about thoughts of ending their life",
+            "Ex-partner mentioned victim's disclosure of suicidal thoughts during an argument"
+          ],
+          "exclusions": [
+            "Disclosures made to family members or friends who are not intimate partners",
+            "General arguments or discussions without mention of suicide intent"
+          ],
+          "notes": [
+            "Intimate partner includes both current and former partners, such as spouses, romantic partners, or significant others",
+            "Record any details about how, when, and to whom the disclosure was made"
+          ]
+        },
+        {
+          "id": "DisclosedToOtherFamilyMember",
+          "type": "binary",
+          "definition": "Intent was disclosed to another family member.",
+          "question": "Was intent disclosed to another family member?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim disclosed suicide intent to a family member other than an intimate partner",
+            "Disclosure is relevant and occurred close to the time of the incident"
+          ],
+          "examples": [
+            "Victim told a sibling about suicidal thoughts",
+            "Mentioned intentions to a parent during a recent conversation"
+          ],
+          "exclusions": [
+            "Disclosures made to non-family members, like friends or coworkers",
+            "Non-specific disclosures lacking any mention of suicide or intent to die"
+          ],
+          "notes": [
+            "Family members include siblings, parents, children, and other blood relatives",
+            "Record specific details about the disclosure, such as timing and content"
+          ]
+        },
+        {
+          "id": "DisclosedToFriend",
+          "type": "binary",
+          "definition": "Intent was disclosed to a friend.",
+          "question": "Was intent disclosed to a friend?",
+          "responseOptions": [
+            {"value": 0, "label": "No"},
+            {"value": 1, "label": "Yes"}
+          ],
+          "criteria": [
+            "Victim disclosed suicide intent to a friend",
+            "The friend understood or acknowledged the disclosure"
+          ],
+          "examples": [
+            "Victim confided in a friend about plans or thoughts of suicide",
+            "Shared intentions with a close friend who later reported the disclosure"
+          ],
+          "exclusions": [
+            "Disclosures to family members, coworkers, or non-friends",
+            "General expressions of distress not directly indicating suicide intent"
+          ],
+          "notes": [
+            "Only code disclosures made to friends, not family or other acquaintances",
+            "Include details about how the friend received or interpreted the disclosure"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Incident details",
+      "variables": [
+        {
+          "id": "InjuryLocationType",
+          "type": "categorical",
+          "definition": "The type of place at which the injury occurred.",
+          "question": "What type of place did the injury occur at?",
+          "responseOptions": [
+            {"value": 1, "label": "House, apartment"},
+            {"value": 2, "label": "Motor vehicle (excluding school bus and public transportation)"},
+            {"value": 3, "label": "Natural area (e.g., field, river, beaches, woods)"},
+            {"value": 4, "label": "Park, playground, public use area"},
+            {"value": 5, "label": "Street/road, sidewalk, alley"},
+            {"value": 6, "label": "Other"}
+          ],
+          "criteria": [
+            "Select the primary type of place based on where the injury occurred",
+            "Use 'Other' for less common locations not fitting predefined categories"
+          ],
+          "examples": [
+            "Victim found injured in their apartment or home",
+            "Injury occurred in a natural location, such as a beach or forest"
+          ],
+          "exclusions": [
+            "Do not code multiple locations; only use the primary place",
+            "Exclude vague location descriptions without specificity"
+          ],
+          "notes": [
+            "Primary location should reflect the immediate environment of the injury",
+            "Categories like 'House, apartment' apply to private residences, while 'Natural area' includes open outdoor spaces like forests"
+          ]
+        },
+        {
+          "id": "WeaponType1",
+          "type": "categorical",
+          "definition": "Type of weapon or means used to inflict the fatal injury.",
+          "question": "What type of weapon or means was used to inflict the fatal injury?",
+          "responseOptions": [
+            {"value": 1, "label": "Blunt instrument"},
+            {"value": 2, "label": "Drowning"},
+            {"value": 3, "label": "Fall"},
+            {"value": 4, "label": "Fire or burns"},
+            {"value": 5, "label": "Firearm"},
+            {"value": 6, "label": "Hanging, strangulation, suffocation"},
+            {"value": 7, "label": "Motor vehicle including buses, motorcycles"},
+            {"value": 8, "label": "Other transport vehicle, e.g., trains, planes, boats"},
+            {"value": 9, "label": "Poisoning"},
+            {"value": 10, "label": "Sharp instrument"},
+            {"value": 11, "label": "Other (e.g., Taser, electrocution, nail gun)"},
+            {"value": 12, "label": "Unknown"}
+          ],
+          "criteria": [
+            "Identify the primary means or object used to inflict the fatal injury",
+            "If multiple methods are involved, code only the most direct cause of death"
+          ],
+          "examples": [
+            "Firearm used as the means of injury",
+            "Victim drowned as the primary cause of fatality"
+          ],
+          "exclusions": [
+            "Do not code secondary or minor factors if another cause is clearly primary",
+            "Ignore secondary causes like poisoning if another method (e.g., firearm) is more direct"
+          ],
+          "notes": [
+            "The primary cause should reflect the most immediate and significant cause of injury",
+            "Categories like 'Sharp instrument' include knives, broken glass, and similar items"
+          ]
+        }
+      ]
+    }
+  ]
+}
